@@ -1,9 +1,9 @@
 import * as http from "http";
 import { ErrorResource } from "./error";
 
-const SOCKET_PATH = process.env.SOCKET_PATH || "/var/run/cycle/api/api.sock";
-const AUTH_TOKEN = process.env.CYCLE_API_TOKEN || "";
-const VERSION = process.env.version || "v1";
+export const SOCKET_PATH = process.env.SOCKET_PATH || "/var/run/cycle/api/api.sock";
+export const AUTH_TOKEN = process.env.CYCLE_API_TOKEN || "";
+export const VERSION = process.env.version || "v1";
 
 /**
  * The result structure of an API request. Can be success or failure
@@ -64,9 +64,9 @@ export function makeRequest<T>({
               title: "Failed to get response from api",
               detail: e.message,
             },
-          }),
+          })
         );
-      },
+      }
     );
     if (method === "POST") {
       req.write(JSON.stringify(data));
