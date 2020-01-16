@@ -1,7 +1,7 @@
-import { IP } from "common/structs";
+import { Structs } from "@cycleplatform/cycle-api";
 
 export interface IPNet {
-  ip: IP;
+  ip: Structs.IP;
   cidr: string;
 }
 

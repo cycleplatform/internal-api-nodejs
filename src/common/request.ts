@@ -1,26 +1,10 @@
 import * as http from "http";
-import { ErrorResource } from "./error";
+import { Request } from "@cycleplatform/cycle-api";
 
-export const SOCKET_PATH = process.env.SOCKET_PATH || "/var/run/cycle/api/api.sock";
+export const SOCKET_PATH =
+  process.env.SOCKET_PATH || "/var/run/cycle/api/api.sock";
 export const AUTH_TOKEN = process.env.CYCLE_API_TOKEN || "";
 export const VERSION = process.env.version || "v1";
-
-/**
- * The result structure of an API request. Can be success or failure
- */
-export type ApiResult<T> = ResultSuccess<T> | ResultFail<ErrorResource>;
-
-/** The result of a successful API call */
-export interface ResultSuccess<T> {
-  ok: true;
-  value: T;
-}
-
-/** The result of a failed API call */
-export interface ResultFail<T> {
-  ok: false;
-  error: T;
-}
 
 export interface RequestProps {
   path: string;
@@ -32,7 +16,7 @@ export function makeRequest<T>({
   path,
   data,
   method = "GET",
-}: RequestProps): Promise<ApiResult<T>> {
+}: RequestProps): Promise<Request.ApiResult<T>> {
   return new Promise(res => {
     const req = http.request(
       {

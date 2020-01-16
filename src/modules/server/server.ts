@@ -14,3 +14,9 @@ export async function getServerInstances() {
     path: "/server/instances",
   });
 }
+
+export function getServerContainers() {
+  return makeRequest<Containers.Collection>({
+    path: "/server/containers",
+  });
+}
