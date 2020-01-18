@@ -1,5 +1,8 @@
 {
-  "version": "1.0.0",
+  "name": "@cycleplatform/internal-api",
+  "author": "Petrichor, Inc.",
+  "description": "An API client to utilize Cycle's Internal API (inside a container) ",
+  "version": "0.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -9,7 +12,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test",
+    "test": "DOCKER_BUILDKIT=1 docker build -t cycleplatform/internal-api-test .",
     "lint": "tsdx lint",
     "prepare": "tsdx build"
   },
@@ -25,9 +28,7 @@
     "singleQuote": false,
     "trailingComma": "es5"
   },
-  "name": "@cycleplatform/cycle-internal-api",
-  "author": "Alexander Mattoni",
-  "module": "dist/cycle-internal-api.esm.js",
+  "module": "dist/internal-api.esm.js",
   "devDependencies": {
     "@types/jest": "^24.0.25",
     "@types/ws": "^6.0.4",
@@ -36,7 +37,7 @@
     "prettier": "^1.19.1",
     "tsdx": "^0.12.3",
     "tslib": "^1.10.0",
-    "typescript": "^3.7.4"
+    "typescript": "^3.8.0-beta"
   },
   "dependencies": {
     "@cycleplatform/cycle-api": "^1.5.28",

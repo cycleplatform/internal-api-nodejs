@@ -1,8 +1,9 @@
 import WebSocket from "ws";
 import { SOCKET_PATH, AUTH_TOKEN, VERSION } from "common/request";
+import { Notifications } from "@cycleplatform/cycle-api";
 
 interface ConnectionProps {
-  onMessage: (m: any) => void;
+  onMessage: (m: Notifications.HubNotification) => void;
   onOpen?: () => void;
   onClose?: () => void;
   onError?: (err: any) => void;

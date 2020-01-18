@@ -29,6 +29,8 @@
   "author": "Alexander Mattoni",
   "module": "dist/node-internal-api.esm.js",
   "devDependencies": {
+    "@cycleplatform/cycle-api": "^1.5.28",
+    "@cycleplatform/cycle-internal-api": "file:../../cycleplatform-cycle-internal-api-0.0.0.tgz",
     "@types/jest": "^24.0.25",
     "babel-plugin-module-resolver": "^4.0.0",
     "husky": "^4.0.7",
