@@ -22,7 +22,4 @@ export async function getEnvironmentServices() {
   });
 }
 
-
-export async function getEnvironmentEgressGateways() {
-
-}
+export async function getEnvironmentEgressGateways() {}
