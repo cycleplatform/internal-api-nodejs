@@ -14,6 +14,7 @@ WORKDIR /app
 COPY --from=compiler /app ./tmp
 COPY test/container .
 RUN mv ./tmp/tsconfig.json .
-RUN npm install
 RUN npm install ./tmp/$(cat ./tmp/filename.txt)
+RUN rm -rf ./tmp
+RUN npm install
 CMD ["npm", "test"]

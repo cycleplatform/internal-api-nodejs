@@ -36,4 +36,6 @@ export function connectToNotifications({
   if (onClose) {
     ws.on("close", onClose);
   }
+
+  return ws;
 }
