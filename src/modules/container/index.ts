@@ -1,4 +1,2 @@
-import * as Certificates from "./certificate";
-
 export * from "./container";
-export { Certificates };
+export * from "./certificates";
