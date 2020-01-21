@@ -33,10 +33,12 @@ export function connectToNotifications({
         if (onError) {
           onError({
             title: "Error parsing payload",
-            detail: "Unable to JSON parse the received payload."
-          })
+            detail: "Unable to JSON parse the received payload.",
+          });
           if (__DEV__) {
-            console.error(`Error parsing notification payload. Expected JSON, but got: "${m}"`)
+            console.error(
+              `Error parsing notification payload. Expected JSON, but got: "${m}"`
+            );
           }
         }
       }

@@ -1,5 +1,5 @@
 import { Structs } from "@cycleplatform/cycle-api";
-import { makeRequest } from 'common/request';
+import { makeRequest } from "common/request";
 
 export interface Certificate extends Structs.Resource {
   domains: string[];
