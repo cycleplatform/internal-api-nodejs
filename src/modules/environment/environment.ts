@@ -15,14 +15,4 @@ export async function getEnvironmentInstances() {
   });
 }
 
-/** Retrieve all instances running in the same environment as this instance */
-export async function getEnvironmentServices() {
-  return makeRequest<Containers.Instances.Collection>({
-    path: "/environment/instances",
-  });
-}
-
-
-export async function getEnvironmentEgressGateways() {
-
-}
+export async function getEnvironmentEgressGateways() {}

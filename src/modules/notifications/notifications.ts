@@ -1,12 +1,12 @@
 import WebSocket from "ws";
 import { SOCKET_PATH, AUTH_TOKEN, VERSION } from "common/request";
-import { Notifications } from "@cycleplatform/cycle-api";
+import { Notifications, Errors } from "@cycleplatform/cycle-api";
 
 interface ConnectionProps {
-  onMessage: (m: Notifications.HubNotification) => void;
+  onMessage?: (m: Notifications.HubNotification) => void;
   onOpen?: () => void;
   onClose?: () => void;
-  onError?: (err: any) => void;
+  onError?: (err: Errors.ErrorResource) => void;
 }
 
 export function connectToNotifications({
@@ -24,10 +24,27 @@ export function connectToNotifications({
     }
   );
 
-  ws.on("message", onMessage);
+  if (onMessage) {
+    ws.on("message", m => {
+      try {
+        const val = JSON.parse(m.toString());
+        onMessage(val);
+      } catch (e) {
+        if (onError) {
+          onError({
+            title: "Error parsing payload",
+            detail: "Unable to JSON parse the received payload."
+          })
+          if (__DEV__) {
+            console.error(`Error parsing notification payload. Expected JSON, but got: "${m}"`)
+          }
+        }
+      }
+    });
+  }
 
   if (onError) {
-    ws.on("error", err => onError(err));
+    ws.on("error", err => onError({ title: err.name, detail: err.message }));
   }
 
   if (onOpen) {
