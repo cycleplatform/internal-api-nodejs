@@ -30,7 +30,7 @@
   },
   "module": "dist/internal-api.esm.js",
   "devDependencies": {
-    "@types/jest": "^24.0.25",
+    "@types/jest": "^24.9.0",
     "@types/ws": "^6.0.4",
     "babel-plugin-module-resolver": "^4.0.0",
     "husky": "^4.0.7",

@@ -2,32 +2,22 @@ export {};
 declare global {
   namespace jest {
     interface Matchers<R, T> {
-      toContainObject(a: any): R;
+      // toBeTypeOrNull(a: any): R;
     }
   }
 }
 
 expect.extend({
-  toContainObject(received, argument) {
-    const pass = this.equals(
-      received,
-      expect.arrayContaining([expect.objectContaining(argument)])
-    );
-
-    if (pass) {
+  toBeTypeOrNull(received, argument) {
+    const pass = this.equals(received, expect.any(argument));
+    if (pass || received === null) {
       return {
-        message: () =>
-          `expected ${this.utils.printReceived(
-            received
-          )} not to contain object ${this.utils.printExpected(argument)}`,
+        message: () => `Ok`,
         pass: true,
       };
     } else {
       return {
-        message: () =>
-          `expected ${this.utils.printReceived(
-            received
-          )} to contain object ${this.utils.printExpected(argument)}`,
+        message: () => `expected ${received} to be ${argument} type or null`,
         pass: false,
       };
     }

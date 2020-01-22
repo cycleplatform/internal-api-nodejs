@@ -1,5 +1,6 @@
 import { Structs } from "@cycleplatform/cycle-api";
 import { makeRequest } from "common/request";
+import { NullableCollectionDoc } from "common/structs";
 
 export interface Certificate extends Structs.Resource {
   domains: string[];
@@ -14,7 +15,7 @@ export interface Certificate extends Structs.Resource {
  * Get the generated certificates for the container of the instance we're in
  */
 export function getContainerCertificates() {
-  return makeRequest<Structs.CollectionDoc<Certificate>>({
+  return makeRequest<NullableCollectionDoc<Certificate>>({
     path: "/container/certificates",
   });
 }
