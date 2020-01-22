@@ -1,12 +1,3 @@
-export {};
-declare global {
-  namespace jest {
-    interface Matchers<R, T> {
-      // toBeTypeOrNull(a: any): R;
-    }
-  }
-}
-
 expect.extend({
   toBeTypeOrNull(received, argument) {
     const pass = this.equals(received, expect.any(argument));
