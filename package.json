@@ -17,6 +17,9 @@
     "prepare": "tsdx build"
   },
   "peerDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
