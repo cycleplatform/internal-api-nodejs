@@ -39,6 +39,6 @@
     "typescript": "^3.8.0-beta"
   },
   "dependencies": {
-    "@cycleplatform/internal-api": "file:../../cycleplatform-internal-api-1.0.0.tgz"
+    "@cycleplatform/internal-api": "file:../../cycleplatform-internal-api-1.0.1.tgz"
   }
 }

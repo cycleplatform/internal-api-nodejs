@@ -63,7 +63,7 @@ describe("Test Environment Endpoints", () => {
       return;
     }
 
-    expect(resp.value.data).toBe([]);
+    expect(Array.isArray(resp.value.data)).toBe(true);
 
     resp.value.data.forEach(v => expect(v).toHaveProperty("destinations"));
   });
