@@ -1,15 +1,15 @@
 # syntax = tonistiigi/dockerfile:runmount20181002
-FROM node:alpine as compiler
+FROM node:13-alpine as compiler
 RUN apk update
 WORKDIR /app
-COPY package.json package-lock.json tsconfig.json .babelrc .npmrc ./
+COPY package.json package-lock.json tsconfig.json .babelrc ./
 COPY src ./src
 
 RUN npm ci
 RUN npm run build
 RUN FILENAME=$(npm pack) && echo $FILENAME > filename.txt
 
-FROM node:alpine 
+FROM node:13-alpine
 WORKDIR /app
 COPY --from=compiler /app ./tmp
 COPY test/container .

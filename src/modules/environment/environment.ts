@@ -15,7 +15,7 @@ export async function getEnvironment() {
 
 /** Retrieve all containers running in the same environment as this instance */
 export async function getEnvironmentContainers() {
-  return makeRequest<Containers.Single>({
+  return makeRequest<Containers.Collection>({
     path: "/environment/containers",
   });
 }

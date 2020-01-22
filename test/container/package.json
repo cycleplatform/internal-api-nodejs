@@ -30,7 +30,6 @@
   "module": "dist/node-internal-api.esm.js",
   "devDependencies": {
     "@cycleplatform/cycle-api": "^1.5.28",
-    "@cycleplatform/cycle-internal-api": "file:../../cycleplatform-cycle-internal-api-0.0.0.tgz",
     "@types/jest": "^24.0.25",
     "babel-plugin-module-resolver": "^4.0.0",
     "husky": "^4.0.7",
@@ -38,5 +37,8 @@
     "tsdx": "^0.12.3",
     "tslib": "^1.10.0",
     "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "@cycleplatform/internal-api": "file:../../cycleplatform-internal-api-1.0.0.tgz"
   }
 }
