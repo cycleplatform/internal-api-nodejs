@@ -43,7 +43,7 @@
     "typescript": "^3.8.0-beta"
   },
   "dependencies": {
-    "@cycleplatform/cycle-api": "^1.4.12",
+    "@cycleplatform/cycle-api": "^1.7.42",
     "ws": "^7.2.1"
   }
 }
