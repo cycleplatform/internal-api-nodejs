@@ -39,11 +39,11 @@
     "husky": "^4.0.7",
     "prettier": "^1.19.1",
     "tsdx": "^0.12.3",
-    "tslib": "^1.10.0",
-    "typescript": "^3.8.0-beta"
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.3"
   },
   "dependencies": {
-    "@cycleplatform/cycle-api": "^1.4.12",
-    "ws": "^7.2.1"
+    "@cycleplatform/cycle-api": "^1.8.4",
+    "ws": "^7.3.0"
   }
 }
