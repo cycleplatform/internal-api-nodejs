@@ -5,7 +5,6 @@ import {
   Infrastructure,
   Structs,
 } from "@cycleplatform/cycle-api";
-import { NullableCollectionDoc } from "common/structs";
 
 /** Retrieve information about the environment this instance is running in */
 export async function getEnvironment() {
@@ -25,15 +24,6 @@ export async function getEnvironmentContainers() {
 export async function getEnvironmentInstances() {
   return makeRequest<Containers.Instances.Collection>({
     path: "/environment/instances",
-  });
-}
-
-/** Retrieve the egress gateways that have been configured for the load balancer that this instance is behind */
-export async function getEnvironmentEgressGateways() {
-  return makeRequest<
-    NullableCollectionDoc<Environments.Services.EgressGateway>
-  >({
-    path: "/environment/egress-gateways",
   });
 }
 

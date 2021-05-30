@@ -51,23 +51,6 @@ describe("Test Environment Endpoints", () => {
     expect(resp.value.data).toHaveProperty("discovery");
   });
 
-  test("It successfully fetches load balancer egress gateways that are part of the same environment as this instance", async () => {
-    const resp = await Environment.getEnvironmentEgressGateways();
-    if (!resp.ok) {
-      throw new Error(
-        `Unable to fetch egress gateways: ${resp.error.title} - ${resp.error.detail}`
-      );
-    }
-
-    if (resp.value.data === null) {
-      return;
-    }
-
-    expect(Array.isArray(resp.value.data)).toBe(true);
-
-    resp.value.data.forEach(v => expect(v).toHaveProperty("destinations"));
-  });
-
   test("It successfully fetches load balancer IP addresses that are part of the same environment as this instance", async () => {
     const resp = await Environment.getEnvironmentIPs();
     if (!resp.ok) {

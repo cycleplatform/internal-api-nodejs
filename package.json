@@ -2,7 +2,7 @@
   "name": "@cycleplatform/internal-api",
   "author": "Petrichor, Inc.",
   "description": "An API client to utilize Cycle's Internal API (inside a container) ",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -33,17 +33,17 @@
   },
   "module": "dist/internal-api.esm.js",
   "devDependencies": {
-    "@types/jest": "^24.9.0",
-    "@types/ws": "^6.0.4",
-    "babel-plugin-module-resolver": "^4.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/ws": "^7.4.4",
+    "babel-plugin-module-resolver": "^4.1.0",
     "husky": "^4.0.7",
     "prettier": "^1.19.1",
-    "tsdx": "^0.12.3",
-    "tslib": "^2.0.0",
-    "typescript": "^3.9.3"
+    "tsdx": "^0.14.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.3.2"
   },
   "dependencies": {
-    "@cycleplatform/cycle-api": "^1.8.4",
-    "ws": "^7.3.0"
+    "@cycleplatform/cycle-api": "^1.10.5",
+    "ws": "^7.4.6"
   }
 }
