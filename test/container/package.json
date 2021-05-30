@@ -26,19 +26,19 @@
     "trailingComma": "es5"
   },
   "name": "node-internal-api",
-  "author": "Alexander Mattoni",
+  "author": "Cycle",
   "module": "dist/node-internal-api.esm.js",
   "devDependencies": {
-    "@cycleplatform/cycle-api": "^1.5.28",
-    "@types/jest": "^24.9.0",
-    "babel-plugin-module-resolver": "^4.0.0",
+    "@cycleplatform/cycle-api": "^1.10.5",
+    "@types/jest": "^26.0.23",
+    "babel-plugin-module-resolver": "^4.1.0",
     "husky": "^4.0.7",
     "prettier": "^1.19.1",
-    "tsdx": "^0.12.3",
-    "tslib": "^1.10.0",
-    "typescript": "^3.8.0-beta"
+    "tsdx": "^0.14.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.3.2"
   },
   "dependencies": {
-    "@cycleplatform/internal-api": "file:../../cycleplatform-internal-api-1.0.1.tgz"
+    "@cycleplatform/internal-api": "file:../../cycleplatform-internal-api-1.1.0.tgz"
   }
 }

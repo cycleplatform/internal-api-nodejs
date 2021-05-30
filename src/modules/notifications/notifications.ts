@@ -2,8 +2,25 @@ import WebSocket from "ws";
 import { SOCKET_PATH, AUTH_TOKEN, VERSION } from "common/request";
 import { Notifications, Errors } from "@cycleplatform/cycle-api";
 
+type InternalNotificationTopic =
+  | "sdn.network.created"
+  | "sdn.network.reconfigured"
+  | "sdn.network.state.changed"
+  | "environment.started"
+  | "environment.stopped"
+  | "environment.services.reconfigured"
+  | "container.state.changed"
+  | "container.instances.reconfigured"
+  | "container.reconfigured"
+  | "internal.service.compute.connected"
+  | "dns.zone.records.reconfigured"
+  | "dns.zone.reconfigured"
+  | "dns.zone.record.certificate.ready";
+
 interface ConnectionProps {
-  onMessage?: (m: Notifications.HubNotification) => void;
+  onMessage?: (
+    m: Notifications.Notification<InternalNotificationTopic>
+  ) => void;
   onOpen?: () => void;
   onClose?: () => void;
   onError?: (err: Errors.ErrorResource) => void;
